@@ -25,13 +25,6 @@ app.use(express.urlencoded({ extended: true }));
 app.use(fileUpload());
 
 
-app.use((req,res,next)=>{
-  res.setHeader('Access-Control-Allow-Origin','*');
-  res.setHeader('Access-Control-Allow-Methods','GET,POST,PUT,PATCH,DELETE');
-  res.setHeader('Access-Control-Allow-Methods','Content-Type','Authorization');
-  next(); 
-})
-
 
 app.get('/api/test', (req, res) => {
   res.send('congrats');
@@ -45,8 +38,6 @@ app.use('/api/v1',item);
 app.use('/api/v1', dashboard);
 app.use('/api/v1',chat);
 app.use('/api/v1',feedback);
-
-
 
 
 // if (process.env.NODE_ENV !== 'PRODUCTION') 

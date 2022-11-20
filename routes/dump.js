@@ -11,6 +11,9 @@ router.route('/dump/:id').get(isAuthenticatedUser, authorizeRoles('administrator
 
 router.route('/dump-list').get(isAuthenticatedUser, authorizeRoles('administrator', 'barangayAdministrator', 'garbageCollector', 'user'), getDumpList);
 
+router.route('/public-dump').get(getDumpList);
+
+
 router.route('/admin/dumps').get(isAuthenticatedUser, authorizeRoles('administrator'), allDumps);
 router.route('/admin/dump/:id').put(isAuthenticatedUser, authorizeRoles('administrator', 'barangayAdministrator', 'newUser'), updateDump).delete(isAuthenticatedUser, authorizeRoles('administrator', 'newUser'), deleteDump);
 router.route('/admin/dump-status/:id').put(isAuthenticatedUser, authorizeRoles('administrator', 'barangayAdministrator', 'garbageCollector'), updateDumpStatus);
