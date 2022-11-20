@@ -5,7 +5,7 @@ const path = require('path')
 const dotenv = require('dotenv');
 const http = require("http");
 // const { Server } = require("socket.io");
-// dotenv.config({path:'./config/config.env'})
+dotenv.config({path:'./config/config.env'})
 
 // if (process.env.NODE_ENV !== 'PRODUCTION') 
 //     require('dotenv').config({ path: 'backend/config/config.env' })
