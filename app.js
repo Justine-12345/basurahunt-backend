@@ -35,8 +35,8 @@ app.get('/api/test', (req, res) => {
   res.send('congrats');
 })
 
-app.use('/api/v1', auth);
-app.use('/api/v1', dump);
+app.use('/api/v1', cors(), auth);
+app.use('/api/v1', cors(), dump);
 app.use('/api/v1',newsfeed);
 app.use('/api/v1',collectionPoint);
 app.use('/api/v1',item);
