@@ -127,11 +127,11 @@ exports.getCollectors = catchAsyncErrors(async (req, res, next) => {
 		users = await User.find({ role: "garbageCollector", barangay: req.user.barangay }).select('first_name last_name jobDesc barangay');
 	}
 
-	if (req.user.role == 'barangayAdministrator') {
-		users = await User.find({ role: "garbageCollector" }).select('first_name last_name jobDesc barangay');
-	} else {
-		users = await User.find({ role: "garbageCollector", barangay: req.user.barangay }).select('first_name last_name jobDesc barangay');
-	}
+	// if (req.user.role == 'barangayAdministrator') {
+	// 	users = await User.find({ role: "garbageCollector" }).select('first_name last_name jobDesc barangay');
+	// } else {
+	// 	users = await User.find({ role: "garbageCollector", barangay: req.user.barangay }).select('first_name last_name jobDesc barangay');
+	// }
 
 	let collectors = [];
 
